@@ -1,0 +1,39 @@
+<h1> <centre> Add New School </centre> </h1>
+
+
+<%= form_for @school do |f| %>
+
+<% if @school.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@school.errors.count, "error") %> prohibited
+        not save
+      </h2>
+      <ul>
+        <% @school.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+	<p>
+	<%= f.label :Name %> 
+	<%= f.text_field :name %> </p>
+	<p>
+	<%= f.label :Address %> 
+	<%= f.text_field :address %></p>
+	<p>
+	<%= f.label :City %>
+	<%= f.text_field :city %></p>
+	<p>
+	<%= f.label :Phone_no %> 
+	<%= f.text_field :phone_no %></p>
+	<p>
+	<%= f.label :Zip %> 
+	<%= f.text_field :zip %></p>
+	<%= f.submit "Create New School"%>
+	<% end %>
+
+
+	

@@ -1,0 +1,19 @@
+
+<h1> School Deatils </h1>
+
+<table id="school_detail">
+    <tr><strong>School Name: </strong><%= @school.name %></tr><br/>
+    <tr><strong>School Address: </strong><%= @school.address %></tr><br/>
+    <tr><strong> City: </strong><%= @school.city %></tr><br/>
+    <tr><strong>School Phone_no: </strong><%= @school.phone_no %></tr><br/>
+    <tr><strong>Zip: </strong><%= @school.zip %></tr><br/>
+
+
+    <br/>
+    <tr>
+    <%= link_to "Show Classrooms", classrooms_index_by_school_path(:school_id => @school.id), method: :get%></tr>
+
+</table>
+    
+<br/>
+</table>

@@ -1,0 +1,18 @@
+
+<h1> <centre> <font color = "blue"> Schools List</font></centre> </h1>
+
+<table id="school">
+
+<% @schools.each do |school| %>  
+  <tr>
+    <td><%= school.name %></td>
+    <td><%= button_to "Show Details", school_path(school.id), method: :get%></td>
+    <td><%= button_to "Delete School", school_path(school.id), method: :delete, data: {confirm: 'Are you sure?'}%></td>
+  </tr>
+  <% end -%>
+
+</table>
+    
+<br/>
+
+<%= button_to "Add New School", new_school_path, method: :get%>

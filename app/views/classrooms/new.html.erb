@@ -1,0 +1,32 @@
+<h1> <centre> Add New Classroom </centre> </h1>
+
+
+<%= form_for @classroom do |f| %>
+<%= @classroom.id%>
+<% if @classroom.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@classroom.errors.count, "error") %>
+        not Created
+      </h2>
+      <ul>
+        <% @classroom.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+	<%#= f.label :School_Name %>
+	<%#= f.text_field :school_name, :value => @classroom, disabled: true, :width => 100%>
+	<p>
+	<%= f.label :Classroom_Name %> </br>
+	<%= f.text_field :name %> </p>
+	<p>
+	<%= f.label :No_of_students %><br/>
+	<%= f.text_field :no_of_students %></p>
+
+
+	
+	<%= f.submit "Create New Classroom"%>
+	<% end %>

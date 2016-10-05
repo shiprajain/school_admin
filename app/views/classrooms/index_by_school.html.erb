@@ -1,0 +1,18 @@
+
+<h1> Classrooms</h1>
+
+<table id="classroom">
+@school
+<% @classrooms.each do |classroom| %>  
+  <tr>
+    <td><%= classroom.name %></td>
+    <td><%= button_to "Show Details", classroom_path(classroom.id), method: :get%></td>
+    <td><%= button_to "Delete School", classroom_path(classroom.id), method: :delete, data: {confirm: 'Are you sure?'}%></td>
+  </tr>
+  <% end %>
+
+  </table>
+
+  <br/>
+<%= @classrooms.last.id %>
+<%#= link_to "Add New Classroom", classrooms_path(classroom.school_id), method: :get%>
